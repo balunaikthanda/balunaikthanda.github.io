@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Balu Naik Thanda Village | Donate | Payment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Village Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="/images/15.jpg" type="image/jpg">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600' rel='stylesheet' type='text/css'>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Spartan', 'Open Sans', sans-serif;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.banner {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.head-logo img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.top-nav {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.nav1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav1 li {
+    position: relative;
+}
+
+.nav1 li a {
+    display: block;
+    padding: 10px 15px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav1 li a:hover, .nav1 li.active a {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.nav1 li a i {
+    display: block;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: normal;
+    color: #999;
+}
+
+.nav1 li a:hover i {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+}
+
+.menu img {
+    width: 30px;
+}
+
+.headText {
+    color: #667eea;
+    text-align: center;
+    margin: 15px 0;
+    font-size: 28px;
+}
+
+@media (max-width: 991px) {
+    .menu {
+        display: block;
+    }
+    
+    .nav1 {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .nav1.active {
+        display: flex;
+    }
+    
+    .top-nav {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+.payment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.box1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.box1 .fw-bolder {
+    font-size: 32px;
+}
+
+.box1 .text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.box2 {
+    background: white;
+    border-radius: 15px;
+    padding: 0;
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #e9ecef;
+}
+
+.nav-tabs .nav-link {
+    color: #6c757d;
+    border: none;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+    color: #667eea;
+    border-bottom: 3px solid #667eea;
+    background: transparent;
+}
+
+.inputWithIcon {
+    position: relative;
+}
+
+.inputWithIcon input {
+    padding-right: 40px;
+}
+
+.inputWithIcon span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.inputWithIcon img {
+    width: 30px;
+    height: auto;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-success {
+    background: #28a745;
+    border: none;
+}
+
+.rounded-circle {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upi-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.upi-id {
+    font-size: 20px;
+    font-weight: bold;
+    color: #667eea;
+    background-color: #f8f9fa;
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 15px 0;
+    box-shadow: 0px 0px 10px rgba(102, 126, 234, 0.2);
+}
+
+.donate-btn {
+    font-size: 18px;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 15px;
+    box-shadow: 0px 5px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.donate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 20px rgba(102, 126, 234, 0.6);
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .box1, .box2 {
+        margin-bottom: 20px;
+    }
+    
+    .headText {
+        font-size: 20px;
+    }
+}
+</style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <div class="banner">
+        <div class="container">
+            <div class="header">
+                <div class="head-logo">
+                    <a href="index.html"><img src="slideshow/Thanda Logo.jpg" alt="Balu Naik Thanda Logo" /></a>
+                </div>
+                <div class="top-nav">
+                    <span class="menu"><img src="images/menu.png" alt="Menu"></span>
+                    <ul class="nav1">
+                        <li class="hvr-sweep-to-bottom"><a href="index.html">హోమ్ పేజ్ <i>Welcomes you to website</i></a></li>
+                        <li class="hvr-sweep-to-bottom"><a href="about.html">గ్రామం గురించి<i>Few words about Us</i></a></li>
+                        <li class="hvr-sweep-to-bottom"><a href="products.html">అన్వేషించు<i>Helpful websites for Villagers</i></a></li>
+                        <li class="hvr-sweep-to-bottom active"><a href="Donation.html">విరాళం<i>Donation help</i></a></li>
+                        <li class="hvr-sweep-to-bottom"><a href="mail.html">మాకు మెయిల్ చేయండి<i>Contact Us here</i></a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <h1 class="headText"><strong>Donate For Balu Naik Thanda Development!</strong></h1>
+        </div>
+    </div>
+
+        <!-- UPI Payment Section -->
+        <div class="upi-section">
+            <h3><i class="fas fa-mobile-alt"></i> Quick UPI Payment</h3>
+            <p>Scan QR code or use UPI ID to donate instantly</p>
+            <div class="upi-id">9599761722@ybl</div>
+            <a href="upi://pay?pa=9599761722@ybl&pn=BaluNaikThanda&cu=INR" class="donate-btn">
+                <i class="fas fa-hand-holding-heart"></i> Donate via UPI
+            </a>
+        </div>
+
+        <!-- Payment Card Section -->
+        <div class="payment-container">
+            <div class="container bg-light d-md-flex align-items-stretch">
+                <!-- Summary Box -->
+                <div class="card box1 shadow-sm p-md-5 p-4">
+                    <div class="fw-bolder mb-4">
+                        <span class="fas fa-rupee-sign"></span>
+                        <span class="ps-1" id="donationAmount">500.00</span>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center justify-content-between text mb-3">
+                            <span>Donation Amount</span>
+                            <span class="fas fa-rupee-sign">
+                                <span class="ps-1" id="baseAmount">500.00</span>
+                            </span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between text">
+                            <span>Processing Fee</span>
+                            <span class="fas fa-rupee-sign">
+                                <span class="ps-1">0.00</span>
+                            </span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between text mb-4">
+                            <span class="fw-bold">Total</span>
+                            <span class="fas fa-rupee-sign">
+                                <span class="ps-1 fw-bold" id="totalAmount">500.00</span>
+                            </span>
+                        </div>
+                        <div class="border-bottom mb-4"></div>
+                        <div class="d-flex flex-column mb-4">
+                            <span class="far fa-file-alt text">
+                                <span class="ps-2">Transaction ID:</span>
+                            </span>
+                            <span class="ps-3">BNT-<span id="transactionId"></span></span>
+                        </div>
+                        <div class="d-flex flex-column mb-5">
+                            <span class="far fa-calendar-alt text">
+                                <span class="ps-2">Date:</span>
+                            </span>
+                            <span class="ps-3" id="currentDate"></span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between text mt-5">
+                            <div class="d-flex flex-column text">
+                                <span>Need Help?</span>
+                                <span>Call: +91 9599761722</span>
+                            </div>
+                            <div class="btn btn-primary rounded-circle">
+                                <span class="fas fa-phone-alt"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Form Box -->
+                <div class="card box2 shadow-sm">
+                    <div class="d-flex align-items-center justify-content-between p-md-5 p-4">
+                        <span class="h5 fw-bold m-0">Payment Methods</span>
+                        <div class="btn btn-primary bar">
+                            <span class="fas fa-bars"></span>
+                        </div>
+                    </div>
+                    <ul class="nav nav-tabs mb-3 px-md-4 px-2">
+                        <li class="nav-item">
+                            <a class="nav-link px-2 active" aria-current="page" href="#creditCard" data-bs-toggle="tab">Credit Card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-2" href="#upiPayment" data-bs-toggle="tab">UPI Payment</a>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link px-2" href="#otherMethods" data-bs-toggle="tab">+ More</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <!-- Credit Card Tab -->
+                        <div class="tab-pane fade show active" id="creditCard">
+                            <div class="px-md-5 px-4 mb-4">
+                                <label class="mb-2">Select Donation Amount</label>
+                                <div class="btn-group w-100 mb-3" role="group">
+                                    <input type="radio" class="btn-check" name="amount" id="amount500" value="500" checked>
+                                    <label class="btn btn-outline-primary" for="amount500">₹500</label>
+                                    
+                                    <input type="radio" class="btn-check" name="amount" id="amount1000" value="1000">
+                                    <label class="btn btn-outline-primary" for="amount1000">₹1000</label>
+                                    
+                                    <input type="radio" class="btn-check" name="amount" id="amount5000" value="5000">
+                                    <label class="btn btn-outline-primary" for="amount5000">₹5000</label>
+                                    
+                                    <input type="radio" class="btn-check" name="amount" id="amountCustom" value="custom">
+                                    <label class="btn btn-outline-primary" for="amountCustom">Custom</label>
+                                </div>
+                                <input type="number" class="form-control" id="customAmount" placeholder="Enter custom amount" style="display:none;">
+                            </div>
+
+                            <form action="" id="paymentForm">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-flex flex-column px-md-5 px-4 mb-4">
+                                            <span>Card Number</span>
+                                            <div class="inputWithIcon">
+                                                <input class="form-control" type="text" placeholder="0000 0000 0000 0000" maxlength="19">
+                                                <span>
+                                                    <img src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-logo-logok-15.png" alt="">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex flex-column ps-md-5 px-md-0 px-4 mb-4">
+                                            <span>Expiration Date</span>
+                                            <div class="inputWithIcon">
+                                                <input type="text" class="form-control" placeholder="MM/YY" maxlength="5">
+                                                <span class="fas fa-calendar-alt"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex flex-column pe-md-5 px-md-0 px-4 mb-4">
+                                            <span>CVV Code</span>
+                                            <div class="inputWithIcon">
+                                                <input type="password" class="form-control" placeholder="123" maxlength="3">
+                                                <span class="fas fa-lock"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex flex-column px-md-5 px-4 mb-4">
+                                            <span>Cardholder Name</span>
+                                            <div class="inputWithIcon">
+                                                <input class="form-control text-uppercase" type="text" placeholder="Your Name">
+                                                <span class="far fa-user"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 px-md-5 px-4 mt-3">
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="fas fa-heart"></i> Donate ₹<span id="payAmount">500.00</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- UPI Tab -->
+                        <div class="tab-pane fade" id="upiPayment">
+                            <div class="px-md-5 px-4 py-5 text-center">
+                                <h4 class="mb-4">Pay via UPI</h4>
+                                <div class="upi-id mb-4">9599761722@ybl</div>
+                                <a href="upi://pay?pa=9599761722@ybl&pn=BaluNaikThanda&cu=INR" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-mobile-alt"></i> Open UPI App
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Other Methods Tab -->
+                        <div class="tab-pane fade" id="otherMethods">
+                            <div class="px-md-5 px-4 py-5">
+                                <h5 class="mb-4">Other Payment Methods</h5>
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <i class="fas fa-university me-2"></i> Net Banking
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <i class="fas fa-wallet me-2"></i> Wallet Payment
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <i class="fas fa-money-check-alt me-2"></i> Bank Transfer
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        $("span.menu").click(function() {
+            $("ul.nav1").slideToggle(300);
+        });
+
+        // Generate transaction ID
+        document.getElementById('transactionId').textContent = Math.random().toString(36).substr(2, 9).toUpperCase();
+        
+        // Set current date
+        const today = new Date();
+        document.getElementById('currentDate').textContent = today.toLocaleDateString('en-IN', { 
+            day: 'numeric', 
+            month: 'long', 
+            year: 'numeric' 
+        });
+
+        // Amount selection logic
+        document.querySelectorAll('input[name="amount"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const customAmountInput = document.getElementById('customAmount');
+                if (this.value === 'custom') {
+                    customAmountInput.style.display = 'block';
+                    customAmountInput.focus();
+                } else {
+                    customAmountInput.style.display = 'none';
+                    updateAmount(this.value);
+                }
+            });
+        });
+
+        document.getElementById('customAmount').addEventListener('input', function() {
+            if (this.value) {
+                updateAmount(this.value);
+            }
+        });
+
+        function updateAmount(amount) {
+            document.getElementById('donationAmount').textContent = parseFloat(amount).toFixed(2);
+            document.getElementById('baseAmount').textContent = parseFloat(amount).toFixed(2);
+            document.getElementById('totalAmount').textContent = parseFloat(amount).toFixed(2);
+            document.getElementById('payAmount').textContent = parseFloat(amount).toFixed(2);
+        }
+
+        // Form submission
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Payment functionality will be integrated with payment gateway. Thank you for your generosity!');
+        });
+
+        // Card number formatting
+        document.querySelector('input[placeholder="0000 0000 0000 0000"]').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formattedValue;
+        });
+
+        // Expiry date formatting
+        document.querySelector('input[placeholder="MM/YY"]').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.slice(0, 2) + '/' + value.slice(2, 4);
+            }
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>

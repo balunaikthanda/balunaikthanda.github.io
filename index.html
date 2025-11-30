@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>గ్రామం, బాలు నాయక్ తాండ | Home</title>
+	
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "96b802d3-af7f-4906-896d-b5c78706d5b2",
+    });
+  });
+</script>	
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Village webpage, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstarp-css -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstarp-css -->
+<!-- css -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<!--// css -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!--fonts-->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600' rel='stylesheet' type='text/css'>
+<!--/fonts-->
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="js/wow.min.js"></script>
+<script>
+	 new WOW().init();
+</script>
+<style>
+        .scrolling-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffcc00; /* Background color for the message */
+            color: #000; /* Text color */
+            text-align: center;
+            padding: 10px 0;
+            box-sizing: border-box;
+            font-size: 1.2em;
+            z-index: 1000; /* Ensure it's on top of other elements */
+            animation: scroll-down 10s linear infinite;
+        }
+
+        @keyframes scroll-down {
+            0% {
+                top: -100%;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+    </style>
+	<!-- Firebase App (non-module) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!-- Firebase Storage -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+<script>
+  // Firebase configuration (Ensure this is in the correct place)
+  const firebaseConfig = {
+    apiKey: "AIzaSyAkRB-AkiV9KC8ZdsgqODGl5BMqCWW5cKk",
+    authDomain: "balunaikthandafiles.firebaseapp.com",
+    projectId: "balunaikthandafiles",
+    storageBucket: "balunaikthandafiles.appspot.com",
+    messagingSenderId: "425213531872",
+    appId: "1:425213531872:web:74ac86ce7d97b058006285",
+    measurementId: "G-WPWN8QWFL4"
+  };
+
+  // Initialize Firebase (Make sure this is executed before any Firebase functions)
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+</head>
+<body>
+
+	<!-- banner -->
+	<div class="banner">
+		<style>
+            .scrolling-message img {
+                width: 80px; /* Adjust this value as needed */
+                height: auto; /* Keeps the aspect ratio */
+                vertical-align: middle; /* Aligns the image vertically with the text */
+                animation: scroll-left 10s linear infinite;
+            }
+        </style>
+		 <!--<div class="scrolling-message">
+            <img src="images/lordgani.jpg" alt="" />వినాయక చవితి - శుభాకాంక్షలు
+                </div>  -->
+		<!-- container -->
+		<div class="container">
+			<div class="header">
+				<div class="head-logo">
+					<a href="index.html">
+						<img src="slideshow/Thanda Logo.jpg" alt="" style="border-radius: 350%; width: 150px; height: 150px; object-fit: cover;" />
+					</a></div>
+				<div class="top-nav">
+					<span class="menu"><img src="images/menu.png" alt=""></span>
+					<ul class="nav1">
+                        <li class="hvr-sweep-to-bottom active"><a href="index.html">హోమ్ పేజ్ <i>Welcomes you to website </i></a></li>
+						<li class="hvr-sweep-to-bottom"><a href="about.html">గ్రామం గురించి<i>Few words about Us</i></a></li>
+						<li class="hvr-sweep-to-bottom"><a href="products.html">అన్వేషించు<i>Helpful websites for Villagers.</i></a></li>
+						<li class="hvr-sweep-to-bottom"><a href="Donation.html">విరాళం<i> Donation help</i></a></li>
+						<li class="hvr-sweep-to-bottom"><a href="mail.html">మాకు మెయిల్ చేయండి<i>Contact Us here</i></a></li>
+						
+                        <div class="clearfix"> </div>
+                    </ul>
+					<!-- script-for-menu -->
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.nav1" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+							</script>
+						<!-- /script-for-menu -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<!-- //container -->
+	
+		<div class="container">
+				<script src="js/responsiveslides.min.js"></script>
+					 <script>
+						// You can also use "$(window).load(function() {"
+						$(function () {
+						  // Slideshow 4
+						  $("#slider3").responsiveSlides({
+							auto: true,
+							pager: true,
+							nav: false,
+							speed: 500,
+							namespace: "callbacks",
+							before: function () {
+							  $('.events').append("<li>before event fired.</li>");
+							},
+							after: function () {
+							  $('.events').append("<li>after event fired.</li>");
+							}
+						  });
+					
+						});
+					  </script>
+			<div  id="top" class="callbacks_container">
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="banner-info">
+								<h2>Website For <span>Balu Naik Thanda</span> Updates</h2>
+								<p> In a universe of endless possibilities, choose compassion.</p>
+						</div>
+					</li>
+					<li>
+						<div class="banner-info">
+								<h2> Empower your <span>Village</span> to become a true torchbearer of progress and development.</h2>
+								<div class="line"> </div>
+								<p> భారతదేశానికి గ్రామీణ ప్రాంతాలే అసలైన బలం అని, మన దేశంలోని గ్రామాలు అపారమైన సౌందర్యంతో మంగళమయంగా ఉంటాయని చెబుతుంటారు.</p>
+						
+						
+						</div>
+					</li>
+					<li>
+						<div class="banner-info">
+								<h2>Steady <span>Growth</span> for Our  Village!</h2>
+								
+								<div class="line"> </div>
+								<p> Villages are known for their Beautiful Natural surroundings.</p>
+						</div>
+						
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!-- //banner -->
+	<div id="visitor-count" style="position: fixed; right: 0; top: 100px; background-color: lightgray; padding: 10px;">
+  Visitors:
+  <!-- hitwebcounter Code START -->
+<a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=16200377&style=0007&nbdigits=5&type=ip&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>     
+  <!-- hitwebcounter Code END -->
+</div>
+	<!-- banner-bottom -->
+
+	<div class="banner-bottom">
+		<!-- container -->
+		<div class="container">
+			<div class="banner-bottom-grids">
+				<div class="col-md-7 banner-bottom-grid-text">
+					<div class="jumbotron banner-bottom-left wow fadeInLeft animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;	">
+					   <font color="Red"> <marquee behavior="scroll" direction="left" scrollamount="3" >Payment Integration has been done you can donate for our Village</marquee></font>
+						<h3>Explore more about the village to know it better </h3>
+					  <marquee width="85%" direction="up" height="100px" scrollamount="1">
+						<font color="Red">This is the New Website Created for Balu Naik Thanda💚✅.</font>
+						</marquee>
+
+						<h5>There different kind of  sections created in this website ,Go through them once <span></span></h5>
+						<p> This website is created for the OFFICIAL Village Site</p>
+						<p> All are inevitable to  Donate For Village development </p> <br>
+						
+						<a href="upi://pay?pa=9599761722@ybl&pn=BaluNaikThanda&cu=INR" class="button button1">వినాయక చవితి కోసం విరాళం ఇవ్వండి</a>
+
+						
+					</div>
+				</div>
+				<div class="col-md-5 banner-bottom-right wow fadeInRight animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+					
+					<meta name="viewport" content="width=device-width, initial-scale=1">
+					<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+					<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+					<style>
+					.mySlides {display:none;}
+					</style>
+					</head>
+					
+					<body>
+					
+						
+					<div class="w3-content w3-section" style="max-width:500px">
+					  <img class="mySlides" src="slideshow/Panchayatoffice.jpeg" style="width:100%">
+					  <img class="mySlides" src="slideshow/nursary.jpeg" style="width:100%">
+					  <img class="mySlides" src="slideshow/Bntgarden.jpeg" style="width:100%">
+					  <img class="mySlides" src="slideshow/Gamingground.jpeg" style="width:100%">
+					  <img class="mySlides" src="slideshow/WhatsApp Image 2024-09-02 at 23.17.03.jpeg" style="width:100%">
+					  <img class="mySlides" src="slideshow/Hanuman Temple.jpeg" style="width:100%">
+					  <img class="mySlides" src="slideshow/Temple 2.jpeg" style="width:100%">
+					  <img class="mySlides" src="slideshow/church.jpeg" style="width:100%">
+					  <img class="mySlides" src="slideshow/bathukamma pic.jpeg" style="width:100%">
+					  <img class="mySlides" src="slideshow/Vinayak.jpeg" style="width:100%">
+					  <img class="mySlides" src="slideshow/teez.jpeg" style="width:100%">
+					  
+					  
+					</div>
+					
+					<script>
+					var myIndex = 0;
+					carousel();
+					
+					function carousel() {
+					  var i;
+					  var x = document.getElementsByClassName("mySlides");
+					  for (i = 0; i < x.length; i++) {
+						x[i].style.display = "none";  
+					  }
+					  myIndex++;
+					  if (myIndex > x.length) {myIndex = 1}    
+					  x[myIndex-1].style.display = "block";  
+					  setTimeout(carousel, 4000); // Change image every 2 seconds
+					}
+					</script>
+					
+					</body>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //banner-bottom -->
+	 <!-- Entertainment Section (Facebook-like Design) -->
+<!-- Entertainment Section -->
+    <div class="entertainment-section">
+        <h2>Entertainment</h2>
+        <div class="entertainment-subtags">
+            <!-- Pictures Link -->
+            <div class="entertainment-tag">
+                <a href="pictures.html" class="entertainment-btn">
+                    Pictures
+                </a>
+            </div>
+            <!-- Videos Link -->
+            <div class="entertainment-tag">
+                <a href="videos.html" class="entertainment-btn">
+                    Videos
+                </a>
+            </div>
+        </div>
+    </div>
+<!-- Upload Section -->
+
+<div class="upload-section">
+    <h2>Upload Festival Videos and Photos</h2>
+    <form id="uploadForm">
+        <label for="fileInput">Select a file to upload:</label>
+        <input type="file" id="fileInput" accept="image/*,video/*" />
+        <button type="submit">Upload</button>
+    </form>
+    <p class="upload-status" id="uploadStatus"></p>
+</div>
+
+<script>
+  const uploadForm = document.getElementById('uploadForm');
+  const fileInput = document.getElementById('fileInput');
+  const uploadStatus = document.getElementById('uploadStatus');
+
+  // Handle the file upload form submission
+  uploadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const file = fileInput.files[0];
+    if (file) {
+      uploadFile(file);
+    } else {
+      uploadStatus.innerHTML = "No file selected!";
+    }
+  });
+
+  // Function to upload the file to Firebase Storage
+  function uploadFile(file) {
+    const storageRef = firebase.storage().ref('uploads/' + file.name);
+    const uploadTask = storageRef.put(file);
+
+    uploadTask.on('state_changed',
+      function(snapshot) {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        uploadStatus.innerHTML = 'Upload is ' + progress.toFixed(0) + '% done';
+      },
+      function(error) {
+        uploadStatus.innerHTML = 'Error: ' + error.message;
+      },
+      function() {
+        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+          uploadStatus.innerHTML = 'File uploaded successfully!';
+          // We don't need to display the file here, as it will be fetched in the respective sections
+        });
+      }
+    );
+  }
+</script>
+
+
+
+
+	<!-- Pillars of the Village Section -->
+<div class="pillars-of-village">
+    <div class="container">
+        <h2 class="section-title">Pillars of the Village</h2>
+
+        <!-- Leaders of the Village Subsection -->
+        <div class="subsection">
+            <h3>Leaders of the Village</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/Dad.jpeg" alt="Leader 1" class="round-img">
+                        <p>Guguloth Ramu</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 2" class="round-img">
+                        <p>Guguloth Rajendar</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 3" class="round-img">
+                        <p>Badavath Narasimha</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/dada.jpg" alt="Leader 4" class="round-img">
+                        <p>Guguloth Ramu Dada</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 5" class="round-img">
+                        <p>Guguloth Eerya Naik</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 6" class="round-img">
+                        <p>Guguloth Shivaram</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 7" class="round-img">
+                        <p>Bhukya Lokesh</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/mohan.jpeg" alt="Leader 8" class="round-img">
+                        <p>Guguloth Mohan | Dancer</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 9" class="round-img">
+                        <p>Banoth Kishan</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 10" class="round-img">
+                        <p>Badavath Veeru</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 11" class="round-img">
+                        <p>Nunavath Hatya</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/venkanna3.jpeg" alt="Leader 12" class="round-img">
+                        <p>Banoth Venkanna</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 13" class="round-img">
+                        <p>Nunavath Sampath</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 14" class="round-img">
+                        <p>Nunavath Sreenu | Ward no 1</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 15" class="round-img">
+                        <p>Ward no 2</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 16" class="round-img">
+                        <p>Ward no 3</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/4th ward number.jpeg" alt="Leader 17" class="round-img">
+                        <p>Banoth Balu | Ward no 4</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 18" class="round-img">
+                        <p>Badavath Raj Kumar | Ward no 5</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 19" class="round-img">
+                        <p>Ward no 6</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 20" class="round-img">
+                        <p>Ward no 7</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="leader">
+                        <img src="images/human.jpg" alt="Leader 21" class="round-img">
+                        <p>Ward no 8</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Youth Association Subsection -->
+        <div class="subsection">
+            <h3>Youth Association</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/vinu.jpg" alt="Youth 1" class="round-img">
+                        <p>Guguloth Praveen</p>
+                    </div>
+                </div>
+		    <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Badavath Anil </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 3" class="round-img">
+                        <p>Badavath Devi</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/nari.jpeg" alt="Youth 4" class="round-img">
+                        <p>Guguloth Narendar</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/devudu.jpeg" alt="Youth 5" class="round-img">
+                        <p>Palavath Devendar</p>
+                    </div>
+                </div>
+		<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/ajay5.jpeg" alt="Youth" class="round-img">
+                        <p>Guguloth Ajay Kumar | Website Developer</p>
+                    </div>
+                </div>
+		<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/chittu.jpg" alt="Youth " class="round-img">
+                        <p>Guguloth Vinay Kumar</p>
+                    </div>
+                </div>
+		<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/chinna.jpeg" alt="Youth 6" class="round-img">
+                        <p>Guguloth Pavan</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/sai.jpeg" alt="Youth 7" class="round-img">
+                        <p>Banoth Sai Kumar</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/rajad.jpeg" alt="Youth 8" class="round-img">
+                        <p>Nunavath Rajanna</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/npavan.jpeg" alt="Youth 9" class="round-img">
+                        <p>Nunavath Pavan</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 10" class="round-img">
+                        <p>Bhukya Sathish</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/naavi.jpeg" alt="Youth 11" class="round-img">
+                        <p>Jatoth Raj Kumar</p>
+                    </div>
+                </div>
+				
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 12" class="round-img">
+                        <p>Palavath Prem Naik</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/pandu p.jpeg" alt="Youth 13" class="round-img">
+                        <p>Palavath Praveen</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 14" class="round-img">
+                        <p>Guguloth Rahul</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/Nithinguguloth.jpg" alt="Youth 15" class="round-img">
+                        <p>Guguloth Nithin</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 16" class="round-img">
+                        <p>Banoth Nithin</p>
+                    </div>
+                </div>
+				<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/naveen.jpeg" alt="Youth 17" class="round-img">
+                        <p>Guguloth Naveen</p>
+                    </div>
+                </div>
+		    <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/dravid.jpeg" alt="Youth 2" class="round-img">
+                        <p>Banoth Dravid </p>
+                    </div>
+                </div>
+		    <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Guguloth Devendar </p>
+                    </div>
+                </div>
+		    <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Guguloth Hanumanthu </p>
+                    </div>
+                </div>
+		    <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Banoth Nithin </p>
+                    </div>
+                </div>
+		    <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p> Guguloth Ajay</p>
+                    </div>
+                </div>
+		    <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Guguloth Vijay </p>
+                    </div>
+                </div>
+		    <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/Billa.jpg" alt="Youth 2" class="round-img">
+                        <p>Palavath Rajesh </p>
+                    </div>
+                </div>
+		     <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Jatoth Abhishek </p>
+                    </div>
+                </div>
+		     <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Jatoth Vamshi </p>
+                    </div>
+                </div>
+		     <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Jatoth Shiva </p>
+                    </div>
+                </div>
+
+		     <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Keloth Ganesh </p>
+                    </div>
+                </div>
+		    
+		     <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Keloth Ramesh </p>
+                    </div>
+                </div>
+		    
+		     <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Banoth Anil Kumar </p>
+                    </div>
+                </div>
+		    
+		     <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
+                        <p>Nunavath Harish </p>
+                    </div>
+                </div>
+		<div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/human.jpg" alt="Youth 18" class="round-img">
+                        <p>Banoth Hemanth Naik</p>
+                    </div>
+                </div>
+		    <div class="col-md-4">
+                    <div class="youth">
+                        <img src="images/mahi.jpeg" alt="Youth 19" class="round-img">
+                        <p>Eslavath Mahendar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	<!-- specialty -->
+	<div class="specialty">
+		<!-- container -->
+		<div class="container">
+			<div class="col-md-5 specialty-info wow fadeInLeft animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+				<h3>Our Gratitude </h3>
+				<h5>ఎందారో మహానుబావులు అందరికి వందనాలు</h5>
+				<p>The construction of a primary school took place in the 2000s, and it was designed to accommodate students all the way until seventh grade.
+					<span> Thanks for our School teachers for inspiring students and empowering them to get seats in Gurukulas. But for the fast few months the Schoole is closed because we don't have the teacher for our Village School.</span>
+				</p>
+				<div class="see-button">
+					<a class="btn btn-primary btn-lg see-button hvr-shutter-out-horizontal specialty-button" href="" role="button">ప్రాథమిక పాఠశాలకు ఉపాధ్యాయుడు అవసరం </a>
+				</div>
+			</div>
+			<div class="col-md-7 specialty-grids">
+				<div class="specialty-grids-top">
+					<div class="col-md-6 service-box wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+						<figure class="icon">
+							<img src="" alt="" />
+						</figure>
+						<h5>People have contributed themselves and making our Village towards the development .  </h5>
+						<p>Each and every penny is very important for Each development work and everyone has been very supportive .</p>
+					</div>
+					<div class="col-md-6 service-box wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+						<figure class="icon">
+							<img src="" alt="" />
+						</figure>
+						<h5>Thanks to our Sarpanch Guguloth Ramu for his contribution and managing all the budget of the village for development.</h5>
+						<p></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="specialty-grids-top">
+					<div class="col-md-6 service-box wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+						<figure class="icon">
+							<img src="" alt="" />
+						</figure>
+						<h5> Contribution to the village development would be much appriciated </h5>
+						<p>People in our village are struggling to manage which are essentials for primary necesseties </p>
+					</div>
+					<div class="col-md-6 service-box wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+						<figure class="icon">
+							<img src="" alt="" />
+						</figure>
+						<h5> Thanks for our Mandal MRO and MLA for encouraging Youth </h5>
+						<p>For supporting and initialising Funds in time whenever required</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //specialty -->
+	<!-- testimonials -->
+	<div class="testimonials">
+		<div class="container">
+			<div class="testimonial-nfo wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				<h3>Balu Naik Thanda </h3>
+				<h5> <span> Village Under development </span></h5>
+			</div>
+			<div class="testimonial-grids wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				<div class="testimonial-grid">
+					<p><span>"</span> మా గ్రామం బాలు నాయక్ తాండ, మూడు సమీప గ్రామాలకు గ్రామ పంచాయతీగా గర్వంగా సేవలందిస్తుంది మరియు ఎస్టీ కేటగిరీకి చెందింది. మా సర్పంచ్ గుగులోత్ రామూ గారి నిబద్ధతతో, మా గ్రామం ప్రతి సంవత్సరం గణనీయమైన అభివృద్ధి సాధించింది. మూడు గ్రామాల ప్రతి కాలనీలో సీసీ రోడ్లను విజయవంతంగా నిర్మించాము.
+
+బాలు నాయక్ తాండ, ఒక ఉత్సాహభరితమైన యువత సమాజానికి నిలయంగా ఉంది. మా యువతీ యువకులు అనేక విద్యా రంగాలలో రాణించి, వివిధ పరిశ్రమల్లో ఉద్యోగాలు సాధిస్తున్నారు. ప్రత్యేకంగా, మా యువతలో అనేక మంది ఐఐటీ, ఎన్‌ఐటీ, నీట్, ఎంసెట్, గురుకులం మరియు నవోదయ వంటి ప్రతిష్టాత్మక పరీక్షలను విజయవంతంగా ఉత్తీర్ణులయ్యారు, ఇవి మా గ్రామం యొక్క అభివృద్ధి స్పూర్తి మరియు సామర్థ్యాన్ని ప్రతిబింబిస్తున్నాయి.   <span> "</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //testimonials -->
+	<!-- news -->
+	<div class="news">
+		
+		<div class="container">
+			<div class="news-text">
+				<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FLaxman824%2FAmudalakunta%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=baidu.svg&icon_color=%23F1E6E6&title=Visitor+Counter&edge_flat=false"/></a>
+				<h6> Find Us on the Map: </h6>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.197615273073!2d79.7637097!3d17.8742483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a336705eacad94f%3A0x835c52591aec98c!2sBalu+Naik+thanda!5e0!3m2!1sen!2sin!4v1693243123456!5m2!1sen!2sin"
+						width="100%"
+						height="400"
+						frameborder="0"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade">
+					</iframe>
+				<h3>News</h3>
+				<h5> Below are the Some News and photos of recent updates<span> LIKE ,SHARE </span></h5>
+			</div>
+			<div class="news-grids">
+				<div class="col-md-3 news-grid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+					<h4> Temples </h4>
+					<span>8.00 - 10.00 | DEC 10, 2016</span>
+					<img src="" alt="" />
+					<div class="news-info">
+						<p> In our Village we built 3 temples. </p>
+					</div>
+				</div>
+				<div class="col-md-3 news-grid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+					<h4>ZPHS Primary Education School <h4>
+					<span>10.00 - 12.00 | OCT 15,2000</span>
+					<img src="" alt="" />
+					<div class="news-info">
+						<p>Enthusisatic Childrens and Teacher in ZPHS school</p>
+					</div>
+				</div>
+				<div class="col-md-3 news-grid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+					<h4>Our Balu Naik Thanda Village Sarpanch Garu Guguloth Ramu/Rajini </h4>
+					<span>9.00 - 10.00 | Jan 15,2019</span>
+					<img src="" alt="" />
+					<div class="news-info">
+						<p>Sarpanch has been elected in the year 2019 and he has been doing the excellent work of developing village in all aspects </p>
+					</div>
+				</div>
+				<div class="col-md-3 news-grid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+					<h4>Crops Cultivated in this village </h4>
+					<span>11.00 - 10.00 | JUN 10,2022</span>
+					<img src="" alt="" />
+					<div class="news-info">
+						<p> seasonal crops are more here .</p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //news -->
+	<!-- footer -->
+	<div class="footer">
+		<!-- container -->
+		<div class="container">
+			<div class="col-md-6 footer-left  wow fadeInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="products.html">Products</a></li>
+					<li><a href="people.html">People</a></li>
+					<li><a href="awards.html">Awards</a></li>
+					<li><a href="404.html">Events</a></li>
+					<li><a href="mail.html">Mail Us</a></li>
+				</ul>
+				<form>
+					<input type="text" placeholder="Email" required="">
+					<input type="submit" value="Subscribe">
+				</form>
+			</div>
+			<div class="col-md-3 footer-middle wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+	
+				<a href="https://maps.app.goo.gl/oAjqaWk1cHESzS6w8"> <h3>Balu Naik thanda Village</h3></a>
+				<div class="address">
+					<p>Sangem Mandal 
+						<span>Warangal District,Telangana State</span>
+					</p>
+				</div>
+				<div class="phone">
+					<p>+91 9599761722</p>
+				</div>
+			</div>
+			<div class="col-md-3 footer-right  wow fadeInRight animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				<a href="#"><img src="images/2.jpg" alt="" style="border-radius: 350%; width: 150px; height: 150px; object-fit: cover;" /></a>
+				<p>This website is developed to use for good involvement of people and letting know any Notifications and dontations can be received for Village development</p>
+			</div>
+			<div class="clearfix"> </div>	
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //footer -->
+	<div class="copyright">
+		<!-- container -->
+		<div class="container">
+			<div class="copyright-left wow fadeInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+													<p>																	Copyrights © 2024 Village Designed by<a href="https://www.linkedin.com/in/ajaygugul8/"> Guguloth Ajay Kumar</a></p>
+			</div>
+			<div class="copyright-right wow fadeInRight animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				<ul>
+					<li><a href="https://twitter.com" class="twitter"> </a></li>
+					<li><a href="https://facebook.com" class="twitter facebook"> </a></li>
+					<li><a href="https://google.com" class="twitter chrome"> </a></li>
+					<li><a href="https://pinterest.com" class="twitter pinterest"> </a></li>
+					<li><a href="https://linkedin.com" class="twitter linkedin"> </a></li>
+					<li><a href="https://instgram.com" class="twitter dribbble"> </a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //container -->
+	</div>
+</body>
+</html>
