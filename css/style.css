@@ -3,6 +3,193 @@ body{
 	background:#fff;
 	font-family: 'Open Sans', sans-serif;
 }
+
+/* =====================
+   Layout & Spacing Upgrades
+   ===================== */
+/* Header alignment and sticky behavior - light bar with pill buttons */
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;            /* vertical centering: logo, nav, visitor */
+	justify-content: flex-start;
+	gap: 16px;
+	padding: 12px 32px;
+	background: #ffffff;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Make header container full-width (no side lines) */
+.header-bar > .container {
+	max-width: none;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+.head-logo {
+	float: none;
+	display: flex;
+	align-items: center;
+}
+.head-logo a {
+	margin-top: 0 !important;
+	display: flex;
+	align-items: center;
+}
+.head-logo a img {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+/* Navigation alignment and spacing */
+.top-nav {
+	float: none;
+	flex: 1 1 auto;
+}
+.top-nav ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;              /* single line on desktop */
+	gap: 16px;
+	padding: 0;
+	margin: 0;
+}
+
+/* Hamburger icon visibility */
+span.menu {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 8px;
+}
+span.menu img {
+	width: 24px;
+	height: 24px;
+	border-radius: 0;
+	background: transparent;
+	padding: 0;
+	box-shadow: none;
+	filter: brightness(0) saturate(100%); /* makes icon dark on white header */
+}
+.top-nav ul li {
+	width: auto;
+	float: none;
+	margin: 0;
+}
+.top-nav ul li a {
+	padding: 8px 22px !important;   /* inner padding for readability */
+	margin: 0 !important;
+	line-height: 1.2;
+	border-radius: 999px;
+	background: rgba(255,255,255,0.85);
+	border: 1px solid rgba(0,0,0,0.08);
+	box-shadow: 0 0 0 1px rgba(255,255,255,0.8), 0 4px 8px rgba(0,0,0,0.08);
+	color: #ea580c;                 /* orange text */
+	font-size: 15px;
+    font-weight: 600;
+}
+.top-nav ul li.active a {
+	background: #f97316;           /* orange pill */
+	border-color: #f97316;
+	color: #111827;                 /* dark text for contrast */
+}
+.top-nav ul li a:hover {
+	background: #f97316;
+	border-color: #f97316;
+	color: #111827;
+	text-decoration: none;
+}
+
+/* Visitor counter refine - right corner pill */
+#visitor-count {
+	margin-left: auto;              /* push to far right in flex row */
+	padding: 8px 18px;
+	background: #111827;
+	color: #f9fafb;
+	font-size: 14px;
+	border-radius: 999px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+/* Section titles and separators */
+.section-title {
+  position: relative;
+  padding-bottom: 12px;
+  margin-top: 20px;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 120px;
+  height: 3px;
+  background: #DA491C;
+  border-radius: 3px;
+}
+
+/* Consistent section spacing and min-heights */
+.banner-bottom,
+.entertainment-section,
+.upload-section,
+.pillars-of-village,
+.specialty,
+.news {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+.banner-bottom { min-height: 420px; }
+.entertainment-section { min-height: 360px; }
+.upload-section { min-height: 360px; }
+.pillars-of-village { min-height: 420px; }
+.specialty { min-height: 360px; }
+.news { min-height: 360px; }
+
+/* Increase white space between major blocks */
+.banner-bottom-grids,
+.news-grids,
+.team-grids,
+.products-top-grids,
+.products-bottom-grids,
+.about-bottom-grids,
+.mail-grids { gap: 20px; margin-top: 40px; }
+
+/* Spacing around buttons/images/text */
+.see-button { margin-top: 20px; }
+.entertainment-btn { margin-top: 8px; }
+.upload-section button { margin-top: 8px; }
+.leader p, .youth p { margin-top: 12px; }
+
+/* Mobile refinements */
+@media (max-width: 768px) {
+  .header {
+    padding: 8px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .head-logo a img { height: 52px; width: 52px; }
+  .top-nav { width: 100%; }
+  .top-nav ul {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  #visitor-count {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  .banner-bottom, .entertainment-section, .upload-section, .pillars-of-village, .specialty, .news { padding-top: 40px !important; padding-bottom: 40px !important; }
+}
+
 body a {
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
@@ -11,7 +198,6 @@ body a {
   -ms-transition: 0.5s all;
 }
 .banner {
-	
 	background-image: url('../images/naatu.jpeg'),url('../slideshow/Village Houses.jpeg'),url('../slideshow/paddy.jpg');
 	background-repeat: no-repeat, repeat; /* Specify the repeat behavior for each image */
 	background-position: center top, left bottom; /* Set the position for each image */
@@ -19,13 +205,12 @@ body a {
 	min-height: 855px;
 	position: relative;
 	transition: background-image 2s ease-in-out;
+	padding-top: 40px;
   }
   .banner:hover {
 	/* Replace 'image3.jpg' and 'image4.jpg' with other image URLs for hover effect */
 	background-image: url(''), url('../slideshow/Village Houses.jpeg'),url('../slideshow/paddy.jpg');
 	animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-  }
-
   }
 .button {
 	border: none;
@@ -62,7 +247,7 @@ body a {
 	color: white;
   }
 .head-logo{
-  float: left;
+  float: none;
 }
 .team-grid {
 	text-align: center;
@@ -82,11 +267,11 @@ body a {
   }
 .head-logo a {
   display: block;
-  margin-top: 3em;
+  margin-top: 0;
 }
 .top-nav{
-  float: right;
-  width: 70%;
+  float: none;
+  width: auto;
 }
 .top-nav ul{
 	padding:0;
@@ -94,19 +279,16 @@ body a {
 }
 .top-nav ul  li{
   display: inline-block;
-  width: 18%;
+  width: auto;
   margin-right: .4em;
-  float:left;
+  float:none;
 }
 .top-nav ul  li.active{
-	background:#DC5329;	
+	background: transparent;        /* active handled above */
 }
 .top-nav ul li a{
-  color: #FFF;
-  font-size: 18px;
-  margin-right: .4em;
-  float: left;
-  padding: 5em 1em 3em;
+	margin-right: .4em;             /* keep horizontal spacing only */
+	float: none;
 }
 .top-nav ul li a i{
   display: block;
@@ -291,6 +473,37 @@ body a {
 .entertainment-btn i {
     font-size: 24px;
 }
+
+/* Side-by-side layout for Entertainment + Upload sections */
+.entertainment-upload-wrapper {
+    max-width: 1100px;
+    margin: 60px auto;
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.entertainment-upload-wrapper .entertainment-section,
+.entertainment-upload-wrapper .upload-section {
+    flex: 1;
+    margin: 0;
+}
+
+.entertainment-upload-wrapper .upload-section {
+    border-left: 1px solid #e5e7eb;
+}
+
+@media (max-width: 768px) {
+    .entertainment-upload-wrapper {
+        flex-direction: column;
+        margin: 40px 16px;
+    }
+    .entertainment-upload-wrapper .upload-section {
+        border-left: none;
+        border-top: 1px solid #e5e7eb;
+        margin-top: 16px;
+    }
+}
 .video-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -395,7 +608,6 @@ body a {
 
 /*-- banner-bottom --*/
 .banner-bottom{
-	
 }
 .banner-bottom-grids{
 	margin: 5em 0;
