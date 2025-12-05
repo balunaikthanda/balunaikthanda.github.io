@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>బాలు నాయక్ తాండ గ్రామ పంచాయతీ  | Home</title>
+<title>బాలు నాయక్ తాండ గ్రామ పంచాయతీ | Home</title>
 	
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
@@ -80,8 +80,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   firebase.initializeApp(firebaseConfig);
 </script>
 
+<style>
+ /* Landing Modal Overlay */
+ body.modal-open { overflow: hidden; }
+ .landing-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 16px; }
+ .landing-modal { width: 100%; max-width: 900px; background: #ffffff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); padding: 28px; }
+ .landing-title { margin: 0 0 16px; text-align: center; font-weight: 700; font-size: 24px; color: #222; }
+ .landing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+ .landing-card { appearance: none; border: 1px solid #e5e7eb; background: #fafafa; border-radius: 12px; padding: 28px 16px; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; text-align: center; }
+ .landing-card h3 { margin: 0; font-size: 18px; color: #111827; }
+ .landing-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.12); background: #ffffff; border-color: #d1d5db; }
+ .landing-card:focus { outline: 3px solid #93c5fd; outline-offset: 2px; }
+ .landing-card.primary { background: linear-gradient(135deg, #2563eb, #22c55e); color: #ffffff; border: none; }
+ .landing-card.primary h3 { color: #ffffff; }
+
+ /* Animation */
+ .animate-in { animation: modalFadeScale .35s ease-out both; }
+ @keyframes modalFadeScale { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+ /* Responsive */
+ @media (max-width: 768px) { .landing-grid { grid-template-columns: 1fr; } .landing-modal { padding: 20px; } }
+
+ /* Card layout overrides and avatar/name styling */
+ .landing-card { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 14px; min-height: 260px; border-radius: 16px; }
+ .landing-avatar { width: 120px; height: 120px; border-radius: 9999px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+ .landing-name { margin-top: auto; font-weight: 700; font-size: 20px; color: #111827; }
+ .landing-card.primary .landing-name { color: #ffffff; }
+</style>
+
 </head>
 <body>
+
+    <div id="landingOverlay" class="landing-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="landing-modal animate-in" role="document">
+            <h2 class="landing-title">Choose Your Village</h2>
+            <div class="landing-grid">
+                <button class="landing-card primary" id="card-bnt" aria-label="Balu Naik Thanda">
+                    <img class="landing-avatar" src="images/human.jpg" alt="Balu Naik Thanda" />
+                    <div class="landing-name">Balu Naik Thanda</div>
+                </button>
+                <button class="landing-card" id="card-gt" aria-label="Guttakinddi Thanda">
+                    <img class="landing-avatar" src="images/human.jpg" alt="Guttakinddi Thanda" />
+                    <div class="landing-name">Guttakinddi Thanda</div>
+                </button>
+                <button class="landing-card" id="card-tt" aria-label="Thotla Thanda">
+                    <img class="landing-avatar" src="images/human.jpg" alt="Thotla Thanda" />
+                    <div class="landing-name">Thotla Thanda</div>
+                </button>
+            </div>
+        </div>
+    </div>
 
 	<!-- banner -->
 	<div class="banner">
@@ -907,6 +955,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!-- //container -->
 	</div>
+	<script>
+	  (function() {
+	    var overlay = document.getElementById('landingOverlay');
+	    var cardBnt = document.getElementById('card-bnt');
+	    var cardGt = document.getElementById('card-gt');
+	    var cardTt = document.getElementById('card-tt');
+
+	    function openOverlay() {
+	      if (!overlay) return;
+	      overlay.style.display = 'flex';
+	      overlay.setAttribute('aria-hidden', 'false');
+	      document.body.classList.add('modal-open');
+	      setTimeout(function(){ cardBnt && cardBnt.focus(); }, 0);
+	    }
+
+	    function closeOverlay() {
+	      if (!overlay) return;
+	      overlay.style.display = 'none';
+	      overlay.setAttribute('aria-hidden', 'true');
+	      document.body.classList.remove('modal-open');
+	    }
+
+	    function showDevMessage() {
+	      alert('Website is still in developing condition');
+	    }
+
+	    if (cardBnt) cardBnt.addEventListener('click', closeOverlay);
+	    if (cardGt) cardGt.addEventListener('click', showDevMessage);
+	    if (cardTt) cardTt.addEventListener('click', showDevMessage);
+
+	    if (document.readyState === 'loading') {
+	      document.addEventListener('DOMContentLoaded', openOverlay);
+	    } else {
+	      openOverlay();
+	    }
+	  })();
+	</script>
 	<!-- //specialty -->
 	<!-- testimonials -->
 	<div class="testimonials">
@@ -1046,7 +1131,66 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </body>
 </html>
 
+<style>
+ /* Landing Modal Overlay */
+ body.modal-open { overflow: hidden; }
+ .landing-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 16px; }
+ .landing-modal { width: 100%; max-width: 900px; background: #ffffff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); padding: 28px; }
+ .landing-title { margin: 0 0 16px; text-align: center; font-weight: 700; font-size: 24px; color: #222; }
+ .landing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+ .landing-card { appearance: none; border: 1px solid #e5e7eb; background: #fafafa; border-radius: 12px; padding: 28px 16px; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; text-align: center; }
+ .landing-card h3 { margin: 0; font-size: 18px; color: #111827; }
+ .landing-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.12); background: #ffffff; border-color: #d1d5db; }
+ .landing-card:focus { outline: 3px solid #93c5fd; outline-offset: 2px; }
+ .landing-card.primary { background: linear-gradient(135deg, #2563eb, #22c55e); color: #ffffff; border: none; }
+ .landing-card.primary h3 { color: #ffffff; }
 
+ /* Animation */
+ .animate-in { animation: modalFadeScale .35s ease-out both; }
+ @keyframes modalFadeScale { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
+ /* Responsive */
+ @media (max-width: 768px) { .landing-grid { grid-template-columns: 1fr; } .landing-modal { padding: 20px; } }
+</style>
 
+<script>
+  (function() {
+    var overlay = document.getElementById('landingOverlay');
+    var cardBnt = document.getElementById('card-bnt');
+    var cardGt = document.getElementById('card-gt');
+    var cardTt = document.getElementById('card-tt');
+
+    function openOverlay() {
+      if (!overlay) return;
+      overlay.style.display = 'flex';
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      // focus first action for accessibility
+      setTimeout(function(){ cardBnt && cardBnt.focus(); }, 0);
+    }
+
+    function closeOverlay() {
+      if (!overlay) return;
+      overlay.style.display = 'none';
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    }
+
+    function showDevMessage() {
+      alert('Website is still in developing condition');
+    }
+
+    // Bind actions
+    if (cardBnt) cardBnt.addEventListener('click', closeOverlay);
+    if (cardGt) cardGt.addEventListener('click', showDevMessage);
+    if (cardTt) cardTt.addEventListener('click', showDevMessage);
+
+    // Show on first load only per session (optional). Always show for now.
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', openOverlay);
+    } else {
+      openOverlay();
+    }
+  })();
+</script>
 
