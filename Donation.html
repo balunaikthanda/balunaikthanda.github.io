@@ -33,6 +33,7 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .head-logo img {
@@ -93,7 +94,9 @@ body {
 }
 
 .menu img {
-    width: 30px;
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%);
 }
 
 .headText {
@@ -106,13 +109,16 @@ body {
 @media (max-width: 991px) {
     .menu {
         display: block;
+        position: absolute;
+        right: 16px;
+        top: 16px;
     }
     
     .nav1 {
         display: none;
         flex-direction: column;
         width: 100%;
-        margin-top: 15px;
+        margin-top: 60px;
     }
     
     .nav1.active {
@@ -282,11 +288,11 @@ body {
                 <div class="top-nav">
                     <span class="menu"><img src="images/menu.png" alt="Menu"></span>
                     <ul class="nav1">
-                        <li class="hvr-sweep-to-bottom"><a href="index.html">హోమ్ పేజ్ <i>Welcomes you to website</i></a></li>
-                        <li class="hvr-sweep-to-bottom"><a href="about.html">గ్రామం గురించి<i>Few words about Us</i></a></li>
-                        <li class="hvr-sweep-to-bottom"><a href="products.html">అన్వేషించు<i>Helpful websites for Villagers</i></a></li>
-                        <li class="hvr-sweep-to-bottom active"><a href="Donation.html">విరాళం<i>Donation help</i></a></li>
-                        <li class="hvr-sweep-to-bottom"><a href="mail.html">మాకు మెయిల్ చేయండి<i>Contact Us here</i></a></li>
+                        <li class="hvr-sweep-to-bottom"><a href="index.html">హోమ్ పేజ్</a></li>
+                        <li class="hvr-sweep-to-bottom"><a href="about.html">గ్రామం గురించి</a></li>
+                        <li class="hvr-sweep-to-bottom"><a href="products.html">అన్వేషించు</a></li>
+                        <li class="hvr-sweep-to-bottom active"><a href="Donation.html">విరాళం</a></li>
+                        <li class="hvr-sweep-to-bottom"><a href="mail.html">మాకు మెయిల్ చేయండి</a></li>
                         <div class="clearfix"></div>
                     </ul>
                 </div>
