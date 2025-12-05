@@ -75,7 +75,7 @@
             spinner.classList.add('hidden');
         }
 
-        // Function to fetch and display images
+        // Function to fetch and display images (limited for faster load)
         function displayImages() {
             const picturesSection = document.getElementById('picturesSection');
             showLoadingSpinner();
@@ -83,21 +83,33 @@
             // Fetch and display images from Firebase Storage
             const storageRef = firebase.storage().ref('uploads/');
             storageRef.listAll().then(function(result) {
-                hideLoadingSpinner();
-                result.items.forEach(function(fileRef) {
+                // Limit how many files we load to improve performance
+                const limitedItems = result.items.slice(0, 30); // adjust 30 as needed
+
+                if (limitedItems.length === 0) {
+                    hideLoadingSpinner();
+                    return;
+                }
+
+                let processed = 0;
+
+                limitedItems.forEach(function(fileRef) {
                     fileRef.getDownloadURL().then(function(url) {
-                        fileRef.getMetadata().then(function(metadata) {
-                            if (metadata.contentType.startsWith('image/')) {
+                        return fileRef.getMetadata().then(function(metadata) {
+                            if (metadata.contentType && metadata.contentType.startsWith('image/')) {
                                 const imgElement = document.createElement('img');
-                                imgElement.src = url;  // Set the image source directly
+                                imgElement.src = url;
                                 imgElement.alt = "Uploaded Image";
                                 picturesSection.appendChild(imgElement);
                             }
-                        }).catch(function(error) {
-                            console.error("Error fetching metadata:", error);
                         });
                     }).catch(function(error) {
-                        console.error("Error getting download URL:", error);
+                        console.error("Error loading image:", error);
+                    }).finally(function() {
+                        processed++;
+                        if (processed === limitedItems.length) {
+                            hideLoadingSpinner();
+                        }
                     });
                 });
             }).catch(function(error) {
