@@ -106,6 +106,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  .landing-avatar { width: 120px; height: 120px; border-radius: 9999px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
  .landing-name { margin-top: auto; font-weight: 700; font-size: 20px; color: #111827; }
  .landing-card.primary .landing-name { color: #ffffff; }
+
+ /* Under development modal */
+ .dev-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); display: none; align-items: center; justify-content: center; z-index: 10000; padding: 16px; opacity: 0; transition: opacity .25s ease; }
+ .dev-overlay.show { display: flex; opacity: 1; }
+ .dev-modal { position: relative; width: 90%; max-width: 560px; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin: 0 auto; display: flex; flex-direction: column; }
+ .dev-video { width: 100%; height: auto; display: block; }
+ .dev-modal::after { display: none; }
+ .dev-content { padding: 16px 20px 18px; text-align: center; color: #000; }
+ .dev-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+ .dev-actions { display: flex; justify-content: center; gap: 10px; }
+ .dev-btn { appearance: none; border: none; border-radius: 12px; padding: 10px 18px; font-weight: 600; cursor: pointer; background: #ffffff; color: #111827; box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+ .dev-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,0.18); }
+ .dev-x { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-size: 18px; background: rgba(255,255,255,0.9); border: none; cursor: pointer; }
+ @media (max-width: 600px) { .dev-title { font-size: 18px; } .dev-modal { width: 92%; max-width: 480px; } }
 </style>
 
 </head>
@@ -131,6 +145,60 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
 
+    <!-- Under Development Modal -->
+    <div id="devOverlay" class="dev-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="dev-modal" role="document">
+        <video class="dev-video" src="images/Website Under Maintenance.mp4" autoplay muted loop playsinline></video>
+        <div class="dev-content">
+          <div class="dev-title">This village website is under developing</div>
+          <div class="dev-actions">
+            <button class="dev-btn" id="devCloseBtn">OK</button>
+          </div>
+        </div>
+        <button class="dev-x" id="devXBtn" aria-label="Close">×</button>
+      </div>
+    </div>
+
+	<!-- header bar -->
+	<div class="header-bar">
+		<div class="container">
+			<div class="header">
+				<div class="head-logo">
+					<a href="index.html">
+						<img src="slideshow/Thanda Logo.jpg" alt="" style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover;" />
+					</a></div>
+				<div class="top-nav">
+					<span class="menu"><img src="images/menu.png" alt=""></span>
+					<ul class="nav1">
+						<li class="hvr-sweep-to-bottom active"><a href="index.html">హోమ్ పేజ్</a></li>
+						<li class="hvr-sweep-to-bottom"><a href="about.html">గ్రామం గురించి</a></li>
+						<li class="hvr-sweep-to-bottom"><a href="products.html">అన్వేషించు</a></li>
+						<li class="hvr-sweep-to-bottom"><a href="Donation.html">విరాళం</a></li>
+						<li class="hvr-sweep-to-bottom"><a href="mail.html">మాకు మెయిల్ చేయండి</a></li>
+						<div id="visitor-count">
+						  Visitors:
+						  <!-- hitwebcounter Code START -->
+						  <a href="https://www.hitwebcounter.com" target="_blank">
+						  <img src="https://hitwebcounter.com/counter/counter.php?page=16200377&style=0007&nbdigits=5&type=ip&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>
+						  <!-- hitwebcounter Code END -->
+						</div>
+						<div class="clearfix"> </div>
+					</ul>
+					<!-- script-for-menu -->
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.nav1" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+							</script>
+						<!-- /script-for-menu -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
 	<!-- banner -->
 	<div class="banner">
 		<style>
@@ -146,39 +214,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>  -->
 		<!-- container -->
 		<div class="container">
-			<div class="header">
-				<div class="head-logo">
-					<a href="index.html">
-						<img src="slideshow/Thanda Logo.jpg" alt="" style="border-radius: 350%; width: 150px; height: 150px; object-fit: cover;" />
-					</a></div>
-				<div class="top-nav">
-					<span class="menu"><img src="images/menu.png" alt=""></span>
-					<ul class="nav1">
-                        <li class="hvr-sweep-to-bottom active"><a href="index.html">హోమ్ పేజ్ <i>Welcomes you to website </i></a></li>
-						<li class="hvr-sweep-to-bottom"><a href="about.html">గ్రామం గురించి<i>Few words about Us</i></a></li>
-						<li class="hvr-sweep-to-bottom"><a href="products.html">అన్వేషించు<i>Helpful websites for Villagers.</i></a></li>
-						<li class="hvr-sweep-to-bottom"><a href="Donation.html">విరాళం<i> Donation help</i></a></li>
-						<li class="hvr-sweep-to-bottom"><a href="mail.html">మాకు మెయిల్ చేయండి<i>Contact Us here</i></a></li>
-						
-                        <div class="clearfix"> </div>
-                    </ul>
-					<!-- script-for-menu -->
-							 <script>
-							   $( "span.menu" ).click(function() {
-								 $( "ul.nav1" ).slideToggle( 300, function() {
-								 // Animation complete.
-								  });
-								 });
-							</script>
-						<!-- /script-for-menu -->
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-		<!-- //container -->
-	
-		<div class="container">
-				<script src="js/responsiveslides.min.js"></script>
+			<script src="js/responsiveslides.min.js"></script>
 					 <script>
 						// You can also use "$(window).load(function() {"
 						$(function () {
@@ -231,15 +267,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	
 	<!-- //banner -->
-	<div id="visitor-count" style="position: fixed; right: 0; top: 100px; background-color: lightgray; padding: 10px;">
-  Visitors:
-  <!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=16200377&style=0007&nbdigits=5&type=ip&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>     
-  <!-- hitwebcounter Code END -->
-</div>
-	<!-- banner-bottom -->
-
 	<div class="banner-bottom">
 		<!-- container -->
 		<div class="container">
@@ -315,36 +342,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- //container -->
 	</div>
 	<!-- //banner-bottom -->
-	 <!-- Entertainment Section (Facebook-like Design) -->
-<!-- Entertainment Section -->
-    <div class="entertainment-section">
-        <h2>Entertainment</h2>
-        <div class="entertainment-subtags">
-            <!-- Pictures Link -->
-            <div class="entertainment-tag">
-                <a href="pictures.html" class="entertainment-btn">
-                    Pictures
-                </a>
-            </div>
-            <!-- Videos Link -->
-            <div class="entertainment-tag">
-                <a href="videos.html" class="entertainment-btn">
-                    Videos
-                </a>
-            </div>
-        </div>
-    </div>
-<!-- Upload Section -->
+	 <!-- Entertainment + Upload Side-by-Side Wrapper -->
+	<div class="entertainment-upload-wrapper">
+	  <!-- Entertainment Section -->
+	  <div class="entertainment-section">
+	      <h2>Entertainment</h2>
+	      <div class="entertainment-subtags">
+	          <!-- Pictures Link -->
+	          <div class="entertainment-tag">
+	              <a href="pictures.html" class="entertainment-btn">
+	                  Pictures
+	              </a>
+	          </div>
+	          <!-- Videos Link -->
+	          <div class="entertainment-tag">
+	              <a href="videos.html" class="entertainment-btn">
+	                  Videos
+	              </a>
+	          </div>
+	      </div>
+	  </div>
 
-<div class="upload-section">
-    <h2>Upload Festival Videos and Photos</h2>
-    <form id="uploadForm">
-        <label for="fileInput">Select a file to upload:</label>
-        <input type="file" id="fileInput" accept="image/*,video/*" />
-        <button type="submit">Upload</button>
-    </form>
-    <p class="upload-status" id="uploadStatus"></p>
-</div>
+	  <!-- Upload Section -->
+	  <div class="upload-section">
+	      <h2>Upload Festival Videos and Photos</h2>
+	      <form id="uploadForm">
+	          <label for="fileInput">Select a file to upload:</label>
+	          <input type="file" id="fileInput" accept="image/*,video/*" />
+	          <button type="submit">Upload</button>
+	      </form>
+	      <p class="upload-status" id="uploadStatus"></p>
+	  </div>
+	</div>
 
 <script>
   const uploadForm = document.getElementById('uploadForm');
@@ -961,6 +990,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    var cardBnt = document.getElementById('card-bnt');
 	    var cardGt = document.getElementById('card-gt');
 	    var cardTt = document.getElementById('card-tt');
+	    var devOverlay = document.getElementById('devOverlay');
+	    var devClose = document.getElementById('devCloseBtn');
+	    var devX = document.getElementById('devXBtn');
 
 	    function openOverlay() {
 	      if (!overlay) return;
@@ -977,13 +1009,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	      document.body.classList.remove('modal-open');
 	    }
 
-	    function showDevMessage() {
-	      alert('Website is still in developing condition');
+	    function openDev() {
+	      if (!devOverlay) return;
+	      devOverlay.style.display = 'flex';
+	      // allow transition
+	      requestAnimationFrame(function() { devOverlay.classList.add('show'); });
+	      devOverlay.setAttribute('aria-hidden', 'false');
+	    }
+
+	    function closeDev() {
+	      if (!devOverlay) return;
+	      devOverlay.classList.remove('show');
+	      devOverlay.setAttribute('aria-hidden', 'true');
+	      setTimeout(function(){ devOverlay.style.display = 'none'; }, 250);
+	      // after closing, show village selection again
+	      if (overlay && overlay.style.display !== 'flex') {
+	        openOverlay();
+	      }
 	    }
 
 	    if (cardBnt) cardBnt.addEventListener('click', closeOverlay);
-	    if (cardGt) cardGt.addEventListener('click', showDevMessage);
-	    if (cardTt) cardTt.addEventListener('click', showDevMessage);
+	    if (cardGt) cardGt.addEventListener('click', openDev);
+	    if (cardTt) cardTt.addEventListener('click', openDev);
+	    if (devClose) devClose.addEventListener('click', function(e){ e.stopPropagation(); closeDev(); });
+	    if (devX) devX.addEventListener('click', function(e){ e.stopPropagation(); closeDev(); });
+	    if (devOverlay) devOverlay.addEventListener('click', function(e){ if (e.target === devOverlay) closeDev(); });
 
 	    if (document.readyState === 'loading') {
 	      document.addEventListener('DOMContentLoaded', openOverlay);
@@ -1130,67 +1180,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </body>
 </html>
-
-<style>
- /* Landing Modal Overlay */
- body.modal-open { overflow: hidden; }
- .landing-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 16px; }
- .landing-modal { width: 100%; max-width: 900px; background: #ffffff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); padding: 28px; }
- .landing-title { margin: 0 0 16px; text-align: center; font-weight: 700; font-size: 24px; color: #222; }
- .landing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
- .landing-card { appearance: none; border: 1px solid #e5e7eb; background: #fafafa; border-radius: 12px; padding: 28px 16px; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; text-align: center; }
- .landing-card h3 { margin: 0; font-size: 18px; color: #111827; }
- .landing-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.12); background: #ffffff; border-color: #d1d5db; }
- .landing-card:focus { outline: 3px solid #93c5fd; outline-offset: 2px; }
- .landing-card.primary { background: linear-gradient(135deg, #2563eb, #22c55e); color: #ffffff; border: none; }
- .landing-card.primary h3 { color: #ffffff; }
-
- /* Animation */
- .animate-in { animation: modalFadeScale .35s ease-out both; }
- @keyframes modalFadeScale { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
-
- /* Responsive */
- @media (max-width: 768px) { .landing-grid { grid-template-columns: 1fr; } .landing-modal { padding: 20px; } }
-</style>
-
-<script>
-  (function() {
-    var overlay = document.getElementById('landingOverlay');
-    var cardBnt = document.getElementById('card-bnt');
-    var cardGt = document.getElementById('card-gt');
-    var cardTt = document.getElementById('card-tt');
-
-    function openOverlay() {
-      if (!overlay) return;
-      overlay.style.display = 'flex';
-      overlay.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('modal-open');
-      // focus first action for accessibility
-      setTimeout(function(){ cardBnt && cardBnt.focus(); }, 0);
-    }
-
-    function closeOverlay() {
-      if (!overlay) return;
-      overlay.style.display = 'none';
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('modal-open');
-    }
-
-    function showDevMessage() {
-      alert('Website is still in developing condition');
-    }
-
-    // Bind actions
-    if (cardBnt) cardBnt.addEventListener('click', closeOverlay);
-    if (cardGt) cardGt.addEventListener('click', showDevMessage);
-    if (cardTt) cardTt.addEventListener('click', showDevMessage);
-
-    // Show on first load only per session (optional). Always show for now.
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', openOverlay);
-    } else {
-      openOverlay();
-    }
-  })();
-</script>
-
