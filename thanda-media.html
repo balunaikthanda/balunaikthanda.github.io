@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>గ్యాలరీ | Photos & Videos</title>
+  <!-- Core styles/scripts (mirroring site) -->
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <link href="css/animate.css" rel="stylesheet" type="text/css" media="all" />
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script> new WOW().init(); </script>
+
+
+  <style>
+    /* Page container */
+    .media-page { padding: 24px 0 40px; }
+
+    /* YouTube-like tabs */
+    .yt-tabs { position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid #e5e7eb; }
+    .yt-tabbar { display: flex; gap: 8px; padding: 10px 12px; overflow-x: auto; }
+    .yt-chip { appearance: none; border: 1px solid #e5e7eb; background: #f8fafc; color: #111827; padding: 8px 14px; border-radius: 18px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .yt-chip.active { background: #111827; color: #fff; border-color: #111827; }
+
+    /* Grid like YouTube */
+    .yt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 16px 12px; }
+    @media (max-width: 1200px) { .yt-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px)  { .yt-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px)  { .yt-grid { grid-template-columns: 1fr; } }
+
+    .yt-card { display: flex; flex-direction: column; gap: 8px; }
+    .thumb-wrap { position: relative; width: 100%; padding-top: 56.25%; background: #f3f4f6; border-radius: 12px; overflow: hidden; }
+    .thumb-wrap img, .thumb-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .yt-title { display: none; }
+
+    /* Spinner */
+    .spinner { border: 4px solid rgba(0,0,0,0.08); border-top: 4px solid #111827; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 24px auto; }
+    @keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+    .hidden { display: none; }
+
+    .section-header { display: none; }
+
+    .sort-wrap { margin-left: auto; }
+    .sort-select { appearance: none; border: 1px solid #e5e7eb; background: #fff; padding: 8px 12px; border-radius: 8px; font-weight: 600; }
+
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .lightbox.show { display: flex; }
+    .lightbox-inner { display: flex; align-items: center; justify-content: center; max-width: 90vw; max-height: 90vh; }
+    .lightbox-img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; display: block; margin: 0; }
+    .lb-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); color: #fff; border: none; width: 44px; height: 44px; border-radius: 9999px; cursor: pointer; font-size: 22px; display: grid; place-items: center; }
+    .lb-prev { left: 20px; }
+    .lb-next { right: 20px; }
+    .lb-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 9999px; background: rgba(255,255,255,0.15); color: #fff; border: none; font-size: 22px; cursor: pointer; }
+
+    .lb-hints { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); color: #e5e7eb; background: rgba(255,255,255,0.08); padding: 6px 10px; border-radius: 8px; font-size: 12px; font-weight: 600; }
+
+    .back-to-top { position: fixed; right: 16px; bottom: 16px; width: 44px; height: 44px; border-radius: 9999px; background: #111827; color: #ffffff; border: none; display: none; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; box-shadow: 0 8px 24px rgba(0,0,0,0.25); z-index: 999; }
+    .back-to-top.show { display: flex; }
+
+    /* Prevent background scroll when lightbox is open */
+    body.lb-open { overflow: hidden; }
+  </style>
+</head>
+<body>
+  <!-- Header bar (copied to match site nav) -->
+  <div class="header-bar">
+    <div class="container">
+      <div class="header">
+        <div class="head-logo">
+          <a href="index.html">
+            <img src="slideshow/Thanda Logo.jpg" alt="" style="border-radius: 50%; width: 80px; height: 80px; object-fit: cover;" />
+          </a>
+        </div>
+        <div class="top-nav">
+          <span class="menu"><img src="images/menu.png" alt=""></span>
+          <ul class="nav1">
+            <li class="hvr-sweep-to-bottom"><a href="index.html">హోమ్ పేజ్</a></li>
+            <li class="hvr-sweep-to-bottom"><a href="about.html">గ్రామం గురించి</a></li>
+            <li class="hvr-sweep-to-bottom"><a href="products.html">అన్వేషించు</a></li>
+            <li class="hvr-sweep-to-bottom active"><a href="thanda-media.html">గ్యాలరీ</a></li>
+            <li class="hvr-sweep-to-bottom"><a href="Donation.html">విరాళం</a></li>
+            <li class="hvr-sweep-to-bottom"><a href="mail.html">మాకు మెయిల్ చేయండి</a></li>
+            <div class="clearfix"> </div>
+          </ul>
+          <script>
+            $("span.menu").click(function(){ $("ul.nav1").slideToggle(300); });
+          </script>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container media-page">
+    <h2 class="section-header">Thanda Media</h2>
+
+    <!-- Tabs -->
+    <div class="yt-tabs">
+      <div class="yt-tabbar">
+        <button id="tabPhotos" class="yt-chip active">Photos</button>
+        <button id="tabVideos" class="yt-chip">Videos</button>
+        <div class="sort-wrap">
+          <select id="sortSelect" class="sort-select" aria-label="Sort order">
+            <option value="newest" selected>Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loadingSpinner" class="spinner hidden"></div>
+
+    <!-- Content grids -->
+    <div id="photosGrid" class="yt-grid"></div>
+    <div id="photosSentinel"></div>
+    <div id="videosGrid" class="yt-grid hidden"></div>
+    <div id="videosSentinel" class="hidden"></div>
+  </div>
+
+  <!-- Lightbox for images -->
+  <div id="lightbox" class="lightbox" aria-modal="true" role="dialog">
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">❮</button>
+    <div class="lightbox-inner">
+      <img id="lightboxImg" class="lightbox-img" alt="Preview" />
+    </div>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next">❯</button>
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <div class="lb-hints">Use ← / → to navigate • Esc to close</div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script>
+    const spinner = document.getElementById('loadingSpinner');
+    const photosGrid = document.getElementById('photosGrid');
+    const videosGrid = document.getElementById('videosGrid');
+    const tabPhotos = document.getElementById('tabPhotos');
+    const tabVideos = document.getElementById('tabVideos');
+    const sortSelect = document.getElementById('sortSelect');
+    const photosSentinel = document.getElementById('photosSentinel');
+    const videosSentinel = document.getElementById('videosSentinel');
+
+    // Lightbox elements
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+    const lbClose = document.getElementById('lbClose');
+    const backToTop = document.getElementById('backToTop');
+
+    function showSpinner() { spinner.classList.remove('hidden'); }
+    function hideSpinner() { spinner.classList.add('hidden'); }
+
+    function setActiveTab(tab) {
+      if (tab === 'photos') {
+        tabPhotos.classList.add('active');
+        tabVideos.classList.remove('active');
+        photosGrid.classList.remove('hidden');
+        videosGrid.classList.add('hidden');
+      } else {
+        tabVideos.classList.add('active');
+        tabPhotos.classList.remove('active');
+        videosGrid.classList.remove('hidden');
+        photosGrid.classList.add('hidden');
+      }
+    }
+
+    const MEDIA = {
+      // You can add objects: { src: 'path', date: '2024-09-10', poster: 'path/to/poster.jpg' }
+      photos: [
+        { src: 'images/10.jpg', date: '2024-09-12' },
+        { src: 'images/15.jpg', date: '2024-09-10' },
+        { src: 'images/10-.jpg', date: '2024-08-30' },
+        { src: 'slideshow/Bntgarden.jpeg', date: '2024-07-12' },
+        { src: 'slideshow/Gamingground.jpeg', date: '2024-06-02' },
+        { src: 'slideshow/Hanuman Temple.jpeg', date: '2024-05-01' },
+        { src: 'images/old one/2.jpg', date: '2023-12-31' },
+        { src: 'images/old one/3.jpg', date: '2023-12-30' }
+      ],
+      videos: [
+        { src: 'videos/Dance gang.mp4', date: '2024-10-01' },
+        { src: 'videos/Village top angle video.mp4', date: '2024-09-20' },
+        { src: 'videos/dad and son.mp4', date: '2024-08-15' },
+        { src: 'videos/gangs.mp4', date: '2024-07-22' }
+      ]
+    };
+
+    const DEFAULT_POSTER = 'slideshow/Thanda Logo.jpg';
+
+    // Normalize entries: string -> {src}
+    function normalize(list) {
+      return list.map(item => typeof item === 'string' ? { src: item } : item);
+    }
+
+    let sortOrder = 'newest'; // 'newest' | 'oldest'
+    let photosList = normalize(MEDIA.photos);
+    let videosList = normalize(MEDIA.videos);
+    let photoIndex = 0;
+    let videoIndex = 0;
+    const PAGE_PHOTOS = 16;
+    const PAGE_VIDEOS = 8;
+
+    function sorted(list) {
+      const withDate = [...list];
+      withDate.sort((a, b) => {
+        const da = a.date ? Date.parse(a.date) : NaN;
+        const db = b.date ? Date.parse(b.date) : NaN;
+        if (isNaN(da) && isNaN(db)) return 0;
+        if (isNaN(da)) return 1;
+        if (isNaN(db)) return -1;
+        return sortOrder === 'newest' ? (db - da) : (da - db);
+      });
+      return withDate;
+    }
+
+    function mountPhotoCard(item, indexInList) {
+      const card = document.createElement('div');
+      card.className = 'yt-card';
+      card.innerHTML = `
+        <div class="thumb-wrap"><img loading="lazy" src="${item.src}" alt="Photo" /></div>
+      `;
+      // Lightbox handler
+      card.querySelector('img').addEventListener('click', () => openLightbox(indexInList));
+      photosGrid.appendChild(card);
+    }
+
+    function loadPhotosPage() {
+      showSpinner();
+      const slice = photosList.slice(photoIndex, photoIndex + PAGE_PHOTOS);
+      slice.forEach((item, i) => mountPhotoCard(item, photoIndex + i));
+      photoIndex += slice.length;
+      hideSpinner();
+    }
+
+    function mountVideoCard(item) {
+      const card = document.createElement('div');
+      card.className = 'yt-card';
+      const v = document.createElement('div');
+      v.className = 'thumb-wrap';
+      const posterAttr = item.poster ? ` poster="${item.poster}"` : (DEFAULT_POSTER ? ` poster="${DEFAULT_POSTER}"` : '');
+      v.innerHTML = `<video src="${item.src}"${posterAttr} controls playsinline preload="metadata"></video>`;
+      card.appendChild(v);
+      videosGrid.appendChild(card);
+    }
+
+    function loadVideosPage() {
+      showSpinner();
+      const slice = videosList.slice(videoIndex, videoIndex + PAGE_VIDEOS);
+      slice.forEach(mountVideoCard);
+      videoIndex += slice.length;
+      hideSpinner();
+    }
+
+    // Infinite scroll via IntersectionObserver
+    let observer;
+    function ensureObserver(target, onReachEnd) {
+      if (observer) observer.disconnect();
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) onReachEnd();
+        });
+      }, { root: null, rootMargin: '400px 0px', threshold: 0 });
+      observer.observe(target);
+    }
+
+    // Tab handlers
+    tabPhotos.addEventListener('click', () => {
+      setActiveTab('photos');
+      if (!photosGrid.children.length) {
+        photosList = sorted(normalize(MEDIA.photos));
+        photoIndex = 0; photosGrid.innerHTML = '';
+        loadPhotosPage();
+      }
+      ensureObserver(photosSentinel, () => {
+        if (photoIndex < photosList.length) loadPhotosPage();
+      });
+    });
+    tabVideos.addEventListener('click', () => {
+      setActiveTab('videos');
+      if (!videosGrid.children.length) {
+        videosList = sorted(normalize(MEDIA.videos));
+        videoIndex = 0; videosGrid.innerHTML = '';
+        loadVideosPage();
+      }
+      ensureObserver(videosSentinel, () => {
+        if (videoIndex < videosList.length) loadVideosPage();
+      });
+    });
+
+    // Sorting change
+    sortSelect.addEventListener('change', () => {
+      sortOrder = sortSelect.value;
+      if (!photosGrid.classList.contains('hidden')) {
+        photosList = sorted(normalize(MEDIA.photos));
+        photoIndex = 0; photosGrid.innerHTML = '';
+        loadPhotosPage();
+        ensureObserver(photosSentinel, () => {
+          if (photoIndex < photosList.length) loadPhotosPage();
+        });
+      } else {
+        videosList = sorted(normalize(MEDIA.videos));
+        videoIndex = 0; videosGrid.innerHTML = '';
+        loadVideosPage();
+        ensureObserver(videosSentinel, () => {
+          if (videoIndex < videosList.length) loadVideosPage();
+        });
+      }
+    });
+
+    // Lightbox logic for photos
+    let lbIndex = -1; // index in photosList
+    function openLightbox(index) {
+      lbIndex = index;
+      lightboxImg.src = photosList[lbIndex].src;
+      lightbox.classList.add('show');
+      document.body.classList.add('lb-open');
+    }
+    function closeLightbox() { lightbox.classList.remove('show'); document.body.classList.remove('lb-open'); lbIndex = -1; }
+    function nextLightbox() { if (lbIndex < photosList.length - 1) openLightbox(lbIndex + 1); }
+    function prevLightbox() { if (lbIndex > 0) openLightbox(lbIndex - 1); }
+    lbClose.addEventListener('click', closeLightbox);
+    lbNext.addEventListener('click', nextLightbox);
+    lbPrev.addEventListener('click', prevLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('show')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextLightbox();
+      if (e.key === 'ArrowLeft') prevLightbox();
+    });
+
+    // Back to Top behavior
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Initial load
+    setActiveTab('photos');
+    photosList = sorted(photosList);
+    loadPhotosPage();
+    ensureObserver(photosSentinel, () => {
+      if (photoIndex < photosList.length) loadPhotosPage();
+    });
+  </script>
+</body>
+</html>

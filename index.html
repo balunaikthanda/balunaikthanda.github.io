@@ -58,6 +58,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
         }
     </style>
+<style>
+  /* Compact 3-row boxes for Choose Your Village */
+  .landing-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .landing-card { flex-direction: row !important; align-items: center !important; justify-content: flex-start !important; padding: 14px 16px !important; min-height: auto !important; height: 60px !important; border-radius: 10px !important; }
+  .landing-avatar { display: none !important; }
+  .landing-name { margin: 0 !important; font-size: 16px !important; font-weight: 700 !important; }
+  .landing-card.primary { background: linear-gradient(135deg, #2563eb, #22c55e) !important; }
+  /* Wider touch target on mobile while staying compact */
+  @media (max-width: 768px) {
+    .landing-modal { padding: 16px !important; }
+    .landing-card { height: 56px !important; }
+    .landing-name { font-size: 15px !important; }
+  }
+</style>
 	<!-- Firebase App (non-module) -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
@@ -131,15 +145,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="landing-grid">
                 <button class="landing-card primary" id="card-bnt" aria-label="Balu Naik Thanda">
                     <img class="landing-avatar" src="images/human.jpg" alt="Balu Naik Thanda" />
-                    <div class="landing-name">Balu Naik Thanda</div>
+                    <div class="landing-name">Balu Naik Thanda (బాలు నాయక్ తండా)</div>
                 </button>
                 <button class="landing-card" id="card-gt" aria-label="Guttakinddi Thanda">
                     <img class="landing-avatar" src="images/human.jpg" alt="Guttakinddi Thanda" />
-                    <div class="landing-name">Guttakinddi Thanda</div>
+                    <div class="landing-name">Guttakindda Thanda (గుట్టకింద తండా)</div>
                 </button>
                 <button class="landing-card" id="card-tt" aria-label="Thotla Thanda">
                     <img class="landing-avatar" src="images/human.jpg" alt="Thotla Thanda" />
-                    <div class="landing-name">Thotla Thanda</div>
+                    <div class="landing-name">Thotla Thanda (తోట్ల తండా)</div>
                 </button>
             </div>
         </div>
@@ -173,6 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="hvr-sweep-to-bottom active"><a href="index.html">హోమ్ పేజ్</a></li>
 						<li class="hvr-sweep-to-bottom"><a href="about.html">గ్రామం గురించి</a></li>
 						<li class="hvr-sweep-to-bottom"><a href="products.html">అన్వేషించు</a></li>
+						<li class="hvr-sweep-to-bottom"><a href="thanda-media.html">గ్యాలరీ </a></li>
 						<li class="hvr-sweep-to-bottom"><a href="Donation.html">విరాళం</a></li>
 						<li class="hvr-sweep-to-bottom"><a href="mail.html">మాకు మెయిల్ చేయండి</a></li>
 						<div id="visitor-count">
@@ -306,7 +321,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  <img class="mySlides" src="slideshow/nursary.jpeg" style="width:100%">
 					  <img class="mySlides" src="slideshow/Bntgarden.jpeg" style="width:100%">
 					  <img class="mySlides" src="slideshow/Gamingground.jpeg" style="width:100%">
-					  <img class="mySlides" src="slideshow/WhatsApp Image 2024-09-02 at 23.17.03.jpeg" style="width:100%">
+					  <!-- <img class="mySlides" src="slideshow/WhatsApp Image 2024-09-02 at 23.17.03.jpeg" style="width:100%"> -->
 					  <img class="mySlides" src="slideshow/Hanuman Temple.jpeg" style="width:100%">
 					  <img class="mySlides" src="slideshow/Temple 2.jpeg" style="width:100%">
 					  <img class="mySlides" src="slideshow/church.jpeg" style="width:100%">
@@ -348,23 +363,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	  <div class="entertainment-section">
 	      <h2>Entertainment</h2>
 	      <div class="entertainment-subtags">
-	          <!-- Pictures Link -->
 	          <div class="entertainment-tag">
-	              <a href="pictures.html" class="entertainment-btn">
-	                  Pictures
-	              </a>
-	          </div>
-	          <!-- Videos Link -->
-	          <div class="entertainment-tag">
-	              <a href="videos.html" class="entertainment-btn">
-	                  Videos
+	              <a href="thanda-media.html" class="entertainment-btn">
+	                  గ్యాలరీ
 	              </a>
 	          </div>
 	      </div>
 	  </div>
 
 	  <!-- Upload Section -->
-	  <div class="upload-section">
+	  <!-- <div class="upload-section">
 	      <h2>Upload Festival Videos and Photos</h2>
 	      <form id="uploadForm">
 	          <label for="fileInput">Select a file to upload:</label>
@@ -373,9 +381,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	      </form>
 	      <p class="upload-status" id="uploadStatus"></p>
 	  </div>
-	</div>
+	</div> -->
 
-<script>
+<!-- <script>
   const uploadForm = document.getElementById('uploadForm');
   const fileInput = document.getElementById('fileInput');
   const uploadStatus = document.getElementById('uploadStatus');
@@ -412,7 +420,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       }
     );
   }
-</script>
+</script> -->
 
 
 
@@ -434,7 +442,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
 				<div class="col-md-4">
                     <div class="leader">
-                        <img src="images/narasimha.jpeg" alt="Leader 3" class="round-img">
+                        <img src="images/human.jpg" alt="Leader 3" class="round-img">
                         <p>Badavath Narasimha</p>
                     </div>
                 </div>
@@ -477,7 +485,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
 				<div class="col-md-4">
                     <div class="leader">
-                        <img src="images/kishan.jpg" alt="Leader 9" class="round-img">
+                        <img src="images/human.jpg" alt="Leader 9" class="round-img">
                         <p>Banoth Kishan</p>
                     </div>
                 </div>
@@ -613,7 +621,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
 		    <div class="col-md-4">
                     <div class="youth">
-                        <img src="images/anil.jpeg" alt="Youth 2" class="round-img">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
                         <p>Badavath Anil </p>
                     </div>
                 </div>
@@ -625,7 +633,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
 				<div class="col-md-4">
                     <div class="youth">
-                        <img src="images/veeru.jpeg" alt="Youth 3" class="round-img">
+                        <img src="images/human.jpg" alt="Youth 3" class="round-img">
                         <p>Banoth Veeru</p>
                     </div>
                 </div>
@@ -673,19 +681,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
 				 <div class="col-md-4">
                     <div class="youth">
-                        <img src="images/ganesh.jpeg" alt="" class="round-img">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
                         <p>Jatoth Ganesh </p>
                     </div>
                 </div>
 				<div class="col-md-4">
                     <div class="youth">
-                        <img src="images/abraham.jpg" alt="" class="round-img">
-                        <p>Banoth Abraham</p>
-                    </div>
-                </div>
-				<div class="col-md-4">
-                    <div class="youth">
-                        <img src="images/sai.jpeg" alt="" class="round-img">
+                        <img src="images/sai.jpeg" alt="Youth 7" class="round-img">
                         <p>Banoth Sai Kumar</p>
                     </div>
                 </div>
@@ -716,7 +718,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 				<div class="col-md-4">
                     <div class="youth">
-                        <img src="images/prem.jpg" alt="" class="round-img">
+                        <img src="images/human.jpg" alt="Youth 12" class="round-img">
                         <p>Palavath Prem Naik</p>
                     </div>
                 </div>
@@ -741,7 +743,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4">
                     <div class="youth">
                         <img src="images/human.jpg" alt="Youth 16" class="round-img">
-                        <p>Bhukya Nithin</p>
+                        <p>Banoth Nithin</p>
                     </div>
                 </div>
 				<div class="col-md-4">
@@ -795,13 +797,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
 		     <div class="col-md-4">
                     <div class="youth">
-                        <img src="images/vamshi.jpg" alt="Youth 2" class="round-img">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
                         <p>Jatoth Vamshi </p>
                     </div>
                 </div>
 		     <div class="col-md-4">
                     <div class="youth">
-                        <img src="images/shiva.jpg" alt="Youth 2" class="round-img">
+                        <img src="images/human.jpg" alt="Youth 2" class="round-img">
                         <p>Jatoth Shiva </p>
                     </div>
                 </div>
@@ -963,7 +965,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<figure class="icon">
 							<img src="" alt="" />
 						</figure>
-						<h5>Thanks to our Ex-Sarpanch Guguloth Ramu for his contribution and managing all the budget of the village for development.</h5>
+						<h5>Thanks to our Sarpanch Guguloth Ramu for his contribution and managing all the budget of the village for development.</h5>
 						<p></p>
 					</div>
 					<div class="clearfix"> </div>
@@ -1058,7 +1060,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="testimonial-grids wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
 				<div class="testimonial-grid">
-					<p><span>"</span> మా గ్రామం బాలు నాయక్ తాండ, మూడు సమీప గ్రామాలకు గ్రామ పంచాయతీగా గర్వంగా సేవలందిస్తుంది మరియు ఎస్టీ కేటగిరీకి చెందింది. మా Ex- సర్పంచ్ గుగులోత్ రామూ గారి నిబద్ధతతో, మా గ్రామం ప్రతి సంవత్సరం గణనీయమైన అభివృద్ధి సాధించింది. మూడు గ్రామాల ప్రతి కాలనీలో సీసీ రోడ్లను విజయవంతంగా నిర్మించాము.
+					<p><span>"</span> మా గ్రామం బాలు నాయక్ తాండ, మూడు సమీప గ్రామాలకు గ్రామ పంచాయతీగా గర్వంగా సేవలందిస్తుంది మరియు ఎస్టీ కేటగిరీకి చెందింది. మా సర్పంచ్ గుగులోత్ రామూ గారి నిబద్ధతతో, మా గ్రామం ప్రతి సంవత్సరం గణనీయమైన అభివృద్ధి సాధించింది. మూడు గ్రామాల ప్రతి కాలనీలో సీసీ రోడ్లను విజయవంతంగా నిర్మించాము.
 
 బాలు నాయక్ తాండ, ఒక ఉత్సాహభరితమైన యువత సమాజానికి నిలయంగా ఉంది. మా యువతీ యువకులు అనేక విద్యా రంగాలలో రాణించి, వివిధ పరిశ్రమల్లో ఉద్యోగాలు సాధిస్తున్నారు. ప్రత్యేకంగా, మా యువతలో అనేక మంది ఐఐటీ, ఎన్‌ఐటీ, నీట్, ఎంసెట్, గురుకులం మరియు నవోదయ వంటి ప్రతిష్టాత్మక పరీక్షలను విజయవంతంగా ఉత్తీర్ణులయ్యారు, ఇవి మా గ్రామం యొక్క అభివృద్ధి స్పూర్తి మరియు సామర్థ్యాన్ని ప్రతిబింబిస్తున్నాయి.   <span> "</span></p>
 				</div>
@@ -1104,7 +1106,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<div class="col-md-3 news-grid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
-					<h4>Our Balu Naik Thanda Village Ex-Sarpanch Garu Guguloth Ramu/Rajini </h4>
+					<h4>Our Balu Naik Thanda Village Sarpanch Garu Guguloth Ramu/Rajini </h4>
 					<span>9.00 - 10.00 | Jan 15,2019</span>
 					<img src="" alt="" />
 					<div class="news-info">
@@ -1186,8 +1188,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </body>
 </html>
-
-
-
-
-
