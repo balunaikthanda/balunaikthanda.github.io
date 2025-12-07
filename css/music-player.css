@@ -1,0 +1,72 @@
+/* Floating music player button at middle-right */
+
+#music-player {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none; /* allow clicks only on the buttons */
+}
+
+/* control buttons: prev / play / next stacked vertically */
+.mp-btn {
+  pointer-events: auto;
+  width: 52px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.mp-btn:active { transform: scale(0.96); }
+.mp-btn:hover { background: rgba(0,0,0,0.88); }
+
+/* Icon styles (simple play/pause) */
+.mp-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+.mp-icon svg { display:block; width:100%; height:100%; }
+
+/* label and small track name */
+.mp-track {
+  pointer-events: none;
+  font-size: 12px;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 6px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-top: 6px;
+}
+
+/* Hidden accessible label */
+.mp-visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
+
+/* Small badge to show on/off */
+.mp-badge {
+  pointer-events: none;
+  font-size: 11px;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 4px 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+@media (max-width:480px){
+  #music-player { right: 10px; }
+  #music-player .mp-btn{ width:48px; height:48px; }
+}
